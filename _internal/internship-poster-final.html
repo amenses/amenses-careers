@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Development Intern | Amenses Innovation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #f57c00;
+      --orange-light: #ff9d3d;
+      --orange-glow: rgba(245, 124, 0, 0.3);
+      --navy: #121820;
+      --navy-light: #1a2332;
+      --navy-lighter: #242f42;
+      --cream: #faf8f5;
+      --cream-dark: #e8e4dd;
+      --text-dark: #0d1117;
+      --text-muted: #5a6272;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--navy);
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section - Full Impact */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 40px 24px;
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+    }
+
+    /* Geometric background elements */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60%;
+      height: 140%;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+      clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+      opacity: 0.08;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    }
+
+    /* Animated grid */
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(245, 124, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 124, 0, 0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    /* Floating orb */
+    .orb {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--orange-glow) 0%, transparent 70%);
+      filter: blur(60px);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .orb-1 { top: 10%; right: 15%; animation-delay: 0s; }
+    .orb-2 { bottom: 20%; left: 10%; width: 300px; height: 300px; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(20px, -30px) scale(1.1); }
+    }
+
+    /* Company header */
+    .company-header {
+      position: absolute;
+      top: 40px;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      .company-header {
+        left: 24px;
+        top: 24px;
+      }
+    }
+
+    .company-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .location-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: var(--navy);
+      padding: 8px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .location-badge::before {
+      content: '📍';
+      font-size: 12px;
+    }
+
+    /* Main hero content */
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow-line {
+      width: 60px;
+      height: 2px;
+      background: var(--orange);
+    }
+
+    .eyebrow-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      line-height: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .hero-title .line-1 {
+      display: block;
+      font-size: clamp(60px, 12vw, 140px);
+      color: var(--cream);
+      letter-spacing: -4px;
+    }
+
+    .hero-title .line-2 {
+      display: block;
+      font-size: clamp(60px, 12vw, 140px);
+      color: transparent;
+      -webkit-text-stroke: 2px var(--orange);
+      letter-spacing: -4px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--cream);
+      opacity: 0.7;
+      max-width: 500px;
+      line-height: 1.6;
+      margin-bottom: 50px;
+    }
+
+    .hero-subtitle strong {
+      color: var(--orange);
+      opacity: 1;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--cream);
+      opacity: 0.5;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .scroll-indicator::before {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: var(--orange);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.5); opacity: 0.5; }
+    }
+
+    /* Content sections */
+    .content {
+      background: var(--cream);
+      padding: 100px 60px;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 60px 24px;
+      }
+    }
+
+    .content-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Section styling */
+    .section {
+      margin-bottom: 100px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 40px;
+      letter-spacing: -1px;
+    }
+
+    /* Philosophy cards */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .philosophy-card {
+      background: var(--navy);
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease;
+    }
+
+    .philosophy-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .philosophy-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .philosophy-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .philosophy-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .philosophy-label {
+      font-size: 11px;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .philosophy-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.3;
+    }
+
+    .philosophy-text span {
+      color: var(--orange);
+    }
+
+    /* What you'll do */
+    .tasks-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    @media (max-width: 900px) {
+      .tasks-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .tasks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .task-item {
+      display: flex;
+      gap: 16px;
+      padding: 24px;
+      background: white;
+      border-left: 3px solid transparent;
+      box-shadow: 0 2px 20px rgba(18, 24, 32, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .task-item:hover {
+      border-left-color: var(--orange);
+      transform: translateX(8px);
+    }
+
+    .task-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--orange);
+      opacity: 0.3;
+      line-height: 1;
+    }
+
+    .task-text {
+      font-size: 15px;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    /* Comparison section */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--cream-dark);
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comparison-side {
+      padding: 50px 40px;
+    }
+
+    .comparison-side.dont {
+      background: var(--cream-dark);
+    }
+
+    .comparison-side.do {
+      background: var(--navy);
+    }
+
+    .comparison-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .comparison-side.dont .comparison-title {
+      color: var(--text-muted);
+    }
+
+    .comparison-side.do .comparison-title {
+      color: var(--orange);
+    }
+
+    .comparison-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comparison-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .comparison-side.dont .comparison-list li {
+      color: var(--text-muted);
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+    .comparison-side.do .comparison-list li {
+      color: var(--cream);
+    }
+
+    .comparison-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+    }
+
+    .comparison-side.dont .comparison-list li::before {
+      background: var(--text-muted);
+      opacity: 0.3;
+    }
+
+    .comparison-side.do .comparison-list li::before {
+      background: var(--orange);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--navy);
+      padding: 100px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .cta-section {
+        padding: 60px 24px;
+      }
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(ellipse at 30% 50%, var(--orange-glow) 0%, transparent 50%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .cta-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+    }
+
+    .cta-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .cta-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 900;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .cta-title span {
+      color: var(--orange);
+    }
+
+    .cta-subtitle {
+      font-size: 16px;
+      color: var(--cream);
+      opacity: 0.6;
+    }
+
+    /* CTA Cards - Premium Interactive */
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cta-card {
+      position: relative;
+      background: var(--navy-light);
+      border: 1px solid var(--navy-lighter);
+      padding: 0;
+      text-decoration: none;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      cursor: pointer;
+      display: block;
+    }
+
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .cta-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .cta-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-12px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px var(--orange-glow);
+    }
+
+    .cta-card:hover::before {
+      opacity: 0.08;
+    }
+
+    .cta-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .cta-card:hover .cta-card-icon {
+      transform: scale(1.15) rotate(-8deg);
+      background: var(--orange);
+      color: var(--navy);
+    }
+
+    .cta-card:hover .cta-card-arrow {
+      transform: translate(8px, -8px);
+      opacity: 1;
+    }
+
+    .cta-card:hover .cta-card-number {
+      opacity: 0.15;
+    }
+
+    .cta-card-inner {
+      position: relative;
+      z-index: 1;
+      padding: 40px 36px;
+    }
+
+    .cta-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .cta-card-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      background: var(--navy-lighter);
+      border: 1px solid rgba(245, 124, 0, 0.2);
+      color: var(--orange);
+      transition: all 0.4s ease;
+    }
+
+    .cta-card-arrow {
+      color: var(--orange);
+      font-size: 20px;
+      opacity: 0.4;
+      transition: all 0.4s ease;
+    }
+
+    .cta-card-content {
+      position: relative;
+    }
+
+    .cta-card-number {
+      position: absolute;
+      top: -20px;
+      right: 0;
+      font-family: 'Outfit', sans-serif;
+      font-size: 100px;
+      font-weight: 900;
+      color: var(--orange);
+      opacity: 0.05;
+      line-height: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .cta-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .cta-card-desc {
+      font-size: 13px;
+      color: var(--cream);
+      opacity: 0.5;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--navy);
+      padding: 80px 60px;
+      text-align: center;
+      border-top: 1px solid var(--navy-lighter);
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        padding: 60px 24px;
+      }
+    }
+
+    .mantra {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      margin-bottom: 40px;
+      letter-spacing: -1px;
+    }
+
+    .mantra span {
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    .mantra span:nth-child(1) { color: var(--orange); }
+    .mantra span:nth-child(2) { color: var(--cream); opacity: 0.8; }
+    .mantra span:nth-child(3) { color: var(--orange-light); }
+    .mantra span:nth-child(4) { color: var(--cream); }
+
+    .mantra span::after {
+      content: '.';
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--cream);
+      opacity: 0.4;
+      margin-bottom: 30px;
+    }
+
+    .footer-company {
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    
+    <div class="company-header">
+      <span class="company-name">Amenses Innovation</span>
+      <div class="location-badge">In-Office · Indore</div>
+    </div>
+
+    <div class="hero-content">
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">We're Hiring</span>
+      </div>
+      
+      <h1 class="hero-title">
+        <span class="line-1">SOFTWARE</span>
+        <span class="line-2">INTERN</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Not your typical internship. <strong>On purpose.</strong><br>
+        We're not looking for perfect candidates. We're looking for curious builders.
+      </p>
+    </div>
+
+    <div class="scroll-indicator">
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <div class="content-wrapper">
+      
+      <!-- Philosophy -->
+      <div class="section">
+        <span class="section-label">Our Philosophy</span>
+        <h2 class="section-title">What we actually<br>care about</h2>
+        
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philosophy-icon">🧠</div>
+            <div class="philosophy-label">We Value</div>
+            <p class="philosophy-text"><span>Learning mindset</span> over resumes</p>
+          </div>
+          <div class="philosophy-card">
+            <div class="philosophy-icon">🔍</div>
+            <div class="philosophy-label">We Value</div>
+            <p class="philosophy-text"><span>Curiosity</span> over compliance</p>
+          </div>
+          <div class="philosophy-card">
+            <div class="philosophy-icon">⚡</div>
+            <div class="philosophy-label">We Value</div>
+            <p class="philosophy-text"><span>Problem-solving</span> over memorized solutions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- What you'll do -->
+      <div class="section">
+        <span class="section-label">The Real Work</span>
+        <h2 class="section-title">What you'll actually<br>do here</h2>
+        
+        <div class="tasks-container">
+          <div class="tasks-list">
+            <div class="task-item">
+              <span class="task-number">01</span>
+              <p class="task-text">Work on real projects used by real users—not simulated exercises</p>
+            </div>
+            <div class="task-item">
+              <span class="task-number">02</span>
+              <p class="task-text">Learn system design—idea → architecture → implementation → iteration</p>
+            </div>
+            <div class="task-item">
+              <span class="task-number">03</span>
+              <p class="task-text">Make decisions, defend them, improve them through feedback</p>
+            </div>
+          </div>
+          <div class="tasks-list">
+            <div class="task-item">
+              <span class="task-number">04</span>
+              <p class="task-text">Break things, fix them, and understand why they broke</p>
+            </div>
+            <div class="task-item">
+              <span class="task-number">05</span>
+              <p class="task-text">Learn modern industry practices through hands-on work</p>
+            </div>
+            <div class="task-item">
+              <span class="task-number">06</span>
+              <p class="task-text">Ask why before how. Research before coding. Iterate always.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison -->
+      <div class="section">
+        <div class="comparison">
+          <div class="comparison-side dont">
+            <h3 class="comparison-title">
+              <span>×</span> We Don't Care About
+            </h3>
+            <ul class="comparison-list">
+              <li>College degree</li>
+              <li>Prior job titles</li>
+              <li>Years of experience</li>
+              <li>Traditional certifications</li>
+              <li>Copy-paste resumes</li>
+            </ul>
+          </div>
+          <div class="comparison-side do">
+            <h3 class="comparison-title">
+              <span>✓</span> What Truly Matters
+            </h3>
+            <ul class="comparison-list">
+              <li>End-to-end understanding</li>
+              <li>Thinking beyond features</li>
+              <li>Ownership of your learning</li>
+              <li>Curiosity & adaptability</li>
+              <li>Honesty about what you don't know</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-wrapper">
+      <div class="cta-header">
+        <h2 class="cta-title">Skip the <span>Resume</span></h2>
+        <p class="cta-subtitle">Pick what represents you best. Click to apply.</p>
+      </div>
+
+      <div class="cta-grid">
+        <a href="mailto:hr@amenses.com?subject=Internship%20Application%20—%20My%20GitHub%20Profile&body=Hi%20Amenses%20Innovation%20Team%2C%0A%0AI'm%20excited%20to%20apply%20for%20the%20Software%20Development%20Intern%20position%20in%20Indore!%0A%0AHere's%20my%20GitHub%20profile%3A%20%5BPaste%20your%20GitHub%20URL%5D%0A%0ARepositories%20I'm%20proud%20of%3A%0A•%20%5BRepo%20name%5D%20—%20%5BWhat%20it%20does%5D%0A•%20%5BRepo%20name%5D%20—%20%5BWhat%20it%20does%5D%0A%0AWhat%20excites%20me%20about%20coding%3A%0A%5BShare%20your%20passion%5D%0A%0ALooking%20forward%20to%20building%20together!%0A%0A%5BYour%20Name%5D" class="cta-card">
+          <div class="cta-card-inner">
+            <div class="cta-card-header">
+              <div class="cta-card-icon">⌘</div>
+              <span class="cta-card-arrow">↗</span>
+            </div>
+            <div class="cta-card-content">
+              <span class="cta-card-number">01</span>
+              <h3 class="cta-card-title">GitHub Profile</h3>
+              <p class="cta-card-desc">Share your code, contributions & experiments</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="mailto:hr@amenses.com?subject=Internship%20Application%20—%20Project%20Showcase&body=Hi%20Amenses%20Innovation%20Team%2C%0A%0AI'm%20applying%20for%20the%20Software%20Development%20Intern%20role%20and%20wanted%20to%20share%20a%20project%20I've%20built!%0A%0A🚀%20Project%20Name%3A%20%5BYour%20project%5D%0A🔗%20Link%3A%20%5BLive%20URL%20or%20repo%5D%0A🛠️%20Tech%20Stack%3A%20%5Be.g.%20React%2C%20Node.js%5D%0A%0AWhat%20it%20does%3A%0A%5B2-3%20sentences%5D%0A%0AWhat%20I%20learned%20building%20it%3A%0A%5BChallenges%20%26%20lessons%5D%0A%0AWhat%20I'd%20improve%3A%0A%5BYour%20growth%20mindset%5D%0A%0A%5BYour%20Name%5D" class="cta-card">
+          <div class="cta-card-inner">
+            <div class="cta-card-header">
+              <div class="cta-card-icon">◈</div>
+              <span class="cta-card-arrow">↗</span>
+            </div>
+            <div class="cta-card-content">
+              <span class="cta-card-number">02</span>
+              <h3 class="cta-card-title">A Project You Built</h3>
+              <p class="cta-card-desc">Even half-finished counts. Show us your work.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="mailto:hr@amenses.com?subject=Internship%20Application%20—%20A%20Problem%20I%20Solved&body=Hi%20Amenses%20Innovation%20Team%2C%0A%0AI'm%20applying%20for%20the%20Software%20Development%20Intern%20role.%20Here's%20a%20problem%20I%20struggled%20with%20and%20how%20I%20approached%20it%3A%0A%0A🔴%20The%20Problem%3A%0A%5BWhat%20were%20you%20trying%20to%20build%20or%20fix%3F%5D%0A%0A🟡%20Why%20It%20Was%20Hard%3A%0A%5BWhat%20didn't%20work%20at%20first%3F%5D%0A%0A🟢%20My%20Approach%3A%0A%5BDebugging%20process%2C%20research%2C%20experiments%5D%0A%0A✅%20The%20Solution%3A%0A%5BWhat%20finally%20worked%20and%20why%5D%0A%0A💭%20What%20I%20Learned%3A%0A%5BHow%20this%20made%20you%20better%5D%0A%0A%5BYour%20Name%5D" class="cta-card">
+          <div class="cta-card-inner">
+            <div class="cta-card-header">
+              <div class="cta-card-icon">⚡</div>
+              <span class="cta-card-arrow">↗</span>
+            </div>
+            <div class="cta-card-content">
+              <span class="cta-card-number">03</span>
+              <h3 class="cta-card-title">A Problem You Solved</h3>
+              <p class="cta-card-desc">Tell us about a challenge you conquered</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="mailto:hr@amenses.com?subject=Internship%20Application%20—%20What%20I'm%20Learning&body=Hi%20Amenses%20Innovation%20Team%2C%0A%0AI'm%20applying%20for%20the%20Software%20Development%20Intern%20position.%20Here's%20what%20I'm%20currently%20learning%20and%20why%3A%0A%0A📚%20Currently%20Learning%3A%0A%5Be.g.%20TypeScript%2C%20System%20Design%2C%20Docker%5D%0A%0A🎯%20Why%20I%20Chose%20This%3A%0A%5BWhat%20drew%20you%20to%20it%3F%5D%0A%0A📖%20Resources%20I'm%20Using%3A%0A%5BCourses%2C%20docs%2C%20tutorials%5D%0A%0A🏗️%20What%20I'm%20Building%20to%20Practice%3A%0A%5BAny%20projects%20or%20experiments%5D%0A%0A🔮%20What's%20Next%3A%0A%5BYour%20learning%20roadmap%5D%0A%0A%5BYour%20Name%5D" class="cta-card">
+          <div class="cta-card-inner">
+            <div class="cta-card-header">
+              <div class="cta-card-icon">∞</div>
+              <span class="cta-card-arrow">↗</span>
+            </div>
+            <div class="cta-card-content">
+              <span class="cta-card-number">04</span>
+              <h3 class="cta-card-title">What You're Learning</h3>
+              <p class="cta-card-desc">Share your current learning journey with us</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="mantra">
+      <span>Build</span>
+      <span>Learn</span>
+      <span>Grow</span>
+      <span>Together</span>
+    </div>
+    <p class="footer-tagline">If you show up with curiosity and effort, we'll show up with guidance, trust, and time.</p>
+    <p class="footer-company">Amenses Innovation Pvt. Ltd.</p>
+  </footer>
+</body>
+</html>

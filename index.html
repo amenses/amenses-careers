@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers | Amenses Innovation Pvt. Ltd.</title>
+    <meta name="description" content="Join Amenses Innovation - Build your career with us. We're hiring Software Engineer Associates and offering Internship Programmes in Indore, MP. Work on real projects, learn from experienced developers, and grow with a team of curious minds and passionate builders." />
+    <meta name="keywords" content="careers, jobs, software engineer, internship, Indore, Amenses Innovation, software development, tech jobs, engineering careers" />
+    <meta name="author" content="Amenses Innovation Pvt. Ltd." />
+    <link rel="canonical" href="https://career.amenses.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://career.amenses.com/" />
+    <meta property="og:title" content="Careers | Amenses Innovation Pvt. Ltd." />
+    <meta property="og:description" content="Join Amenses Innovation - Build your career with us. We're hiring Software Engineer Associates and offering Internship Programmes in Indore, MP." />
+    <meta property="og:image" content="https://career.amenses.com/assets/amenses-logo.png" />
+    <meta property="og:site_name" content="Amenses Innovation Careers" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://career.amenses.com/" />
+    <meta name="twitter:title" content="Careers | Amenses Innovation Pvt. Ltd." />
+    <meta name="twitter:description" content="Join Amenses Innovation - Build your career with us. We're hiring Software Engineer Associates and offering Internship Programmes in Indore, MP." />
+    <meta name="twitter:image" content="https://career.amenses.com/assets/amenses-logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Amenses Innovation Pvt. Ltd.",
+      "url": "https://amenses.com",
+      "logo": "https://career.amenses.com/assets/amenses-logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/amenses-innovation-pvt-ltd/",
+        "https://twitter.com/amenses_i",
+        "https://www.instagram.com/amensesinnovation/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-99-26-40-09-55",
+        "contactType": "Human Resources",
+        "email": "hr@amenses.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Indore",
+        "addressRegion": "Madhya Pradesh",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --orange: #f57c00;
+        --orange-light: #ff9d3d;
+        --orange-glow: rgba(245, 124, 0, 0.3);
+        --navy: #121820;
+        --navy-light: #1a2332;
+        --navy-lighter: #242f42;
+        --cream: #faf8f5;
+        --cream-dark: #e8e4dd;
+        --text-dark: #0d1117;
+        --text-muted: #5a6272;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--navy);
+        color: var(--cream);
+        font-family: "Space Grotesk", sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Animated gradient background */
+      .bg-gradient {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            ellipse at 20% 20%,
+            rgba(245, 124, 0, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 80%,
+            rgba(245, 124, 0, 0.05) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(245, 124, 0, 0.03) 0%,
+            transparent 60%
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Grid lines background */
+      .grid-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            rgba(245, 124, 0, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(245, 124, 0, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Floating orbs */
+      .orb {
+        position: fixed;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          var(--orange-glow) 0%,
+          transparent 70%
+        );
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .orb-1 {
+        width: 400px;
+        height: 400px;
+        top: 10%;
+        right: 10%;
+        animation: float 10s ease-in-out infinite;
+      }
+
+      .orb-2 {
+        width: 300px;
+        height: 300px;
+        bottom: 10%;
+        left: 5%;
+        animation: float 12s ease-in-out infinite reverse;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(30px, -40px) scale(1.1);
+        }
+      }
+
+      /* Header / Navigation */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 24px 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+        background: linear-gradient(180deg, var(--navy) 0%, transparent 100%);
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          padding: 20px 24px;
+        }
+      }
+
+      .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-decoration: none;
+      }
+
+      .logo-image {
+        height: 40px;
+        width: auto;
+      }
+
+      .logo-text {
+        font-family: "Outfit", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--cream);
+        letter-spacing: 0.5px;
+      }
+
+      @media (max-width: 600px) {
+        .logo-text {
+          display: none;
+        }
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .nav-link {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--cream);
+        text-decoration: none;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+      }
+
+      .nav-link:hover {
+        opacity: 1;
+        color: var(--orange);
+      }
+
+      .nav-link.primary {
+        background: var(--orange);
+        color: var(--navy);
+        padding: 10px 20px;
+        opacity: 1;
+        font-weight: 600;
+      }
+
+      .nav-link.primary:hover {
+        background: var(--orange-light);
+        color: var(--navy);
+      }
+
+      /* Main Content */
+      .main {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 140px 60px 100px;
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (max-width: 768px) {
+        .main {
+          padding: 120px 24px 80px;
+        }
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        max-width: 800px;
+        margin-bottom: 80px;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .eyebrow-line {
+        width: 40px;
+        height: 2px;
+        background: var(--orange);
+      }
+
+      .eyebrow-text {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      .hero-title {
+        font-family: "Outfit", sans-serif;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 24px;
+      }
+
+      .hero-title .line-1 {
+        display: block;
+        font-size: clamp(48px, 10vw, 100px);
+        color: var(--cream);
+        letter-spacing: -3px;
+      }
+
+      .hero-title .line-2 {
+        display: block;
+        font-size: clamp(48px, 10vw, 100px);
+        background: linear-gradient(135deg, var(--orange), var(--orange-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -3px;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        color: var(--cream);
+        opacity: 0.6;
+        max-width: 500px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .hero-subtitle strong {
+        color: var(--orange);
+        opacity: 1;
+      }
+
+      /* Opportunities Section */
+      .opportunities {
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .opportunities-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .opportunities-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+      }
+
+      .opportunities-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--cream);
+      }
+
+      /* Job Cards */
+      .job-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      @media (max-width: 768px) {
+        .job-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .job-card {
+        background: var(--navy-light);
+        border: 1px solid var(--navy-lighter);
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        display: block;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .job-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--orange) 0%,
+          var(--orange-light) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .job-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--orange);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .job-card:hover {
+        border-color: var(--orange);
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 50px var(--orange-glow);
+      }
+
+      .job-card:hover::before {
+        opacity: 0.05;
+      }
+
+      .job-card:hover::after {
+        transform: scaleX(1);
+      }
+
+      .job-card:hover .job-icon {
+        transform: scale(1.1) rotate(-5deg);
+        background: var(--orange);
+        color: var(--navy);
+        border-color: var(--orange);
+      }
+
+      .job-card:hover .job-arrow {
+        transform: translate(8px, -8px);
+        opacity: 1;
+      }
+
+      .job-card:hover .job-badge {
+        background: var(--orange);
+        color: var(--navy);
+      }
+
+      .job-card-inner {
+        position: relative;
+        z-index: 1;
+        padding: 40px;
+      }
+
+      .job-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 24px;
+      }
+
+      .job-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        background: var(--navy-lighter);
+        border: 1px solid rgba(245, 124, 0, 0.2);
+        color: var(--orange);
+        transition: all 0.4s ease;
+      }
+
+      .job-arrow {
+        color: var(--orange);
+        font-size: 24px;
+        opacity: 0.4;
+        transition: all 0.4s ease;
+      }
+
+      .job-content {
+        margin-bottom: 30px;
+      }
+
+      .job-badge {
+        display: inline-block;
+        background: var(--navy-lighter);
+        color: var(--cream);
+        padding: 6px 14px;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .job-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--cream);
+        margin-bottom: 12px;
+        line-height: 1.2;
+      }
+
+      .job-description {
+        font-size: 14px;
+        color: var(--cream);
+        opacity: 0.6;
+        line-height: 1.7;
+      }
+
+      .job-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-top: 24px;
+        border-top: 1px solid var(--navy-lighter);
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: var(--cream);
+        opacity: 0.5;
+      }
+
+      .meta-item svg {
+        width: 16px;
+        height: 16px;
+        color: var(--orange);
+        opacity: 0.8;
+      }
+
+      /* Footer */
+      .footer {
+        width: 100%;
+        padding: 60px;
+        position: relative;
+        z-index: 1;
+        border-top: 1px solid var(--navy-lighter);
+      }
+
+      @media (max-width: 768px) {
+        .footer {
+          padding: 40px 24px;
+        }
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 60px;
+        align-items: start;
+      }
+
+      @media (max-width: 900px) {
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+        }
+      }
+
+      .footer-brand {
+        max-width: 300px;
+      }
+
+      @media (max-width: 900px) {
+        .footer-brand {
+          max-width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .footer-logo {
+        height: 36px;
+        margin-bottom: 16px;
+      }
+
+      .footer-tagline {
+        font-size: 14px;
+        color: var(--cream);
+        opacity: 0.5;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 12px;
+      }
+
+      @media (max-width: 900px) {
+        .footer-social {
+          justify-content: center;
+        }
+      }
+
+      .social-link {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--navy-lighter);
+        border: 1px solid var(--navy-lighter);
+        color: var(--cream);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--orange);
+        border-color: var(--orange);
+        color: var(--navy);
+      }
+
+      .social-link svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .footer-column h4 {
+        font-family: "Outfit", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-links a {
+        font-size: 14px;
+        color: var(--cream);
+        opacity: 0.6;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        opacity: 1;
+        color: var(--orange);
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 30px;
+        border-top: 1px solid var(--navy-lighter);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      .footer-copyright {
+        font-size: 13px;
+        color: var(--cream);
+        opacity: 0.4;
+      }
+
+      .footer-legal {
+        display: flex;
+        gap: 24px;
+      }
+
+      .footer-legal a {
+        font-size: 13px;
+        color: var(--cream);
+        opacity: 0.4;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer-legal a:hover {
+        opacity: 1;
+        color: var(--orange);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-gradient"></div>
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <a href="https://amenses.com" class="logo-link">
+        <img
+          src="assets/amenses-logo.png"
+          alt="Amenses Innovation"
+          class="logo-image"
+        />
+        <span class="logo-text">Amenses Innovation</span>
+      </a>
+      <nav class="nav-links">
+        <a href="https://amenses.com" class="nav-link">Home</a>
+        <a href="https://amenses.com/about" class="nav-link">About</a>
+        <a href="mailto:hr@amenses.com" class="nav-link primary">Contact HR</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">Join Our Team</span>
+          <span class="eyebrow-line"></span>
+        </div>
+        <h1 class="hero-title">
+          <span class="line-1">BUILD YOUR</span>
+          <span class="line-2">CAREER</span>
+        </h1>
+        <p class="hero-subtitle">
+          We're not just hiring — we're building a team of
+          <strong>curious minds</strong> and
+          <strong>passionate builders</strong> who want to grow with us.
+        </p>
+      </section>
+
+      <!-- Opportunities -->
+      <section class="opportunities">
+        <div class="opportunities-header">
+          <p class="opportunities-label">Open Positions</p>
+          <h2 class="opportunities-title">Current Opportunities</h2>
+        </div>
+
+        <div class="job-grid">
+          <!-- Software Engineer Associate -->
+          <a href="./software-engineer-associate/index.html" class="job-card">
+            <div class="job-card-inner">
+              <div class="job-header">
+                <div class="job-icon">💻</div>
+                <span class="job-arrow">↗</span>
+              </div>
+              <div class="job-content">
+                <span class="job-badge">Full-Time</span>
+                <h3 class="job-title">Software Engineer Associate</h3>
+                <p class="job-description">
+                  Join our engineering team to build scalable solutions, work on
+                  real-world projects, and grow your skills alongside
+                  experienced developers.
+                </p>
+              </div>
+              <div class="job-meta">
+                <div class="meta-item">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>Indore, MP</span>
+                </div>
+                <div class="meta-item">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                  <span>In-Office</span>
+                </div>
+                <div class="meta-item">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  <span>Immediate</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Internship Programme -->
+          <a href="./internships-pogramme/index.html" class="job-card">
+            <div class="job-card-inner">
+              <div class="job-header">
+                <div class="job-icon">🚀</div>
+                <span class="job-arrow">↗</span>
+              </div>
+              <div class="job-content">
+                <span class="job-badge">Internship</span>
+                <h3 class="job-title">Internship Programme</h3>
+                <p class="job-description">
+                  Not your typical internship. Learn by doing, work on real
+                  projects, and grow with mentorship from experienced engineers.
+                  Perfect for curious builders.
+                </p>
+              </div>
+              <div class="job-meta">
+                <div class="meta-item">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>Indore, MP</span>
+                </div>
+                <div class="meta-item">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                  <span>In-Office</span>
+                </div>
+                <div class="meta-item">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <span>Open Now</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img
+            src="assets/amenses-logo.png"
+            alt="Amenses Innovation"
+            class="footer-logo"
+          />
+          <p class="footer-tagline">
+            We build. We learn. We grow — together. Join us in creating
+            innovative solutions that make a difference.
+          </p>
+          <div class="footer-social">
+            <a
+              href="https://www.linkedin.com/company/amenses-innovation-pvt-ltd/"
+              class="social-link"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://twitter.com/amenses_i"
+              class="social-link"
+              target="_blank"
+              aria-label="Twitter"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/amensesinnovation/"
+              class="social-link"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="https://amenses.com">Home</a></li>
+            <li><a href="https://amenses.com/about">About Us</a></li>
+            <li><a href="https://amenses.com/services">Services</a></li>
+            <li><a href="https://amenses.com/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Get in Touch</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:info@amenses.com">info@amenses.com</a></li>
+            <li><a href="mailto:hr@amenses.com">hr@amenses.com</a></li>
+            <li><a href="tel:+919926400955">+91 99 26 40 09 55</a></li>
+            <li>
+              <a href="https://amenses.com" target="_blank">amenses.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © 2025 Amenses Innovation Pvt. Ltd. All rights reserved.
+        </p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

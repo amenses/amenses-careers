@@ -1,0 +1,11 @@
+# robots.txt for career.amenses.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://career.amenses.com/sitemap.xml
+
+# Disallow internal files
+Disallow: /_internal/
+

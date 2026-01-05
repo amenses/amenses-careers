@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Development Intern | Build. Break. Learn. Repeat.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #12121a;
+      --accent-green: #00ff88;
+      --accent-orange: #ff6b35;
+      --accent-cyan: #00d4ff;
+      --text-primary: #e8e8e8;
+      --text-muted: #6b6b7b;
+      --border-color: #2a2a3a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Grid lines background */
+    .grid-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(var(--border-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .poster {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      position: relative;
+    }
+
+    /* Header section */
+    .header {
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid var(--accent-green);
+      color: var(--accent-green);
+      padding: 8px 16px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      animation: pulse-border 2s ease-in-out infinite;
+    }
+
+    .role-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      animation: blink 1s ease-in-out infinite;
+    }
+
+    @keyframes pulse-border {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.2); }
+      50% { box-shadow: 0 0 20px 2px rgba(0, 255, 136, 0.1); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .main-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(48px, 10vw, 90px);
+      font-weight: 800;
+      line-height: 0.95;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .main-title .line1 {
+      display: block;
+      color: var(--text-primary);
+    }
+
+    .main-title .line2 {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 2px var(--accent-orange);
+      position: relative;
+    }
+
+    .main-title .line2::after {
+      content: 'INTERN';
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--accent-cyan);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-top: 30px;
+      padding-left: 2px;
+    }
+
+    .tagline span {
+      color: var(--accent-orange);
+    }
+
+    /* Decorative code block */
+    .code-decoration {
+      position: absolute;
+      right: 0;
+      top: 20px;
+      font-size: 10px;
+      color: var(--text-muted);
+      opacity: 0.4;
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    .code-decoration .comment { color: var(--accent-green); opacity: 0.6; }
+
+    /* Content sections */
+    .content {
+      display: grid;
+      gap: 50px;
+    }
+
+    .section {
+      position: relative;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-number {
+      font-size: 10px;
+      color: var(--accent-cyan);
+      opacity: 0.6;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-color), transparent);
+    }
+
+    /* Hero statement */
+    .hero-statement {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-statement::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent-green), var(--accent-cyan));
+    }
+
+    .hero-statement p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text-primary);
+    }
+
+    .hero-statement .highlight {
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+
+    .hero-statement .strike {
+      color: var(--text-muted);
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    /* What we believe */
+    .beliefs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .belief-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .belief-item:hover {
+      border-color: var(--accent-green);
+      transform: translateY(-2px);
+    }
+
+    .belief-item::before {
+      content: '>';
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      color: var(--accent-green);
+      font-size: 10px;
+      opacity: 0.5;
+    }
+
+    .belief-item span {
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    /* What you'll do */
+    .tasks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border-left: 2px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .task-item:hover {
+      border-left-color: var(--accent-orange);
+      background: rgba(255, 107, 53, 0.05);
+    }
+
+    .task-icon {
+      color: var(--accent-orange);
+      font-size: 14px;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    .task-text {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+
+    /* Don't care / Do care split */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .split-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .split-card {
+      padding: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    .split-card.dont-care {
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--bg-card),
+        var(--bg-card) 10px,
+        rgba(255, 107, 53, 0.02) 10px,
+        rgba(255, 107, 53, 0.02) 20px
+      );
+    }
+
+    .split-card.do-care {
+      background: var(--bg-card);
+      border-color: var(--accent-green);
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.05);
+    }
+
+    .split-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .split-card.dont-care .split-title {
+      color: var(--text-muted);
+    }
+
+    .split-card.do-care .split-title {
+      color: var(--accent-green);
+    }
+
+    .split-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .split-list li {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .split-card.dont-care .split-list li::before {
+      content: '×';
+      color: var(--accent-orange);
+      opacity: 0.5;
+    }
+
+    .split-card.do-care .split-list li {
+      color: var(--text-primary);
+    }
+
+    .split-card.do-care .split-list li::before {
+      content: '✓';
+      color: var(--accent-green);
+    }
+
+    /* Apply section */
+    .apply-section {
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 212, 255, 0.05));
+      border: 1px solid var(--accent-green);
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .apply-section::before,
+    .apply-section::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--accent-green);
+    }
+
+    .apply-section::before {
+      top: -2px;
+      left: -2px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .apply-section::after {
+      bottom: -2px;
+      right: -2px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .apply-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .apply-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .apply-option {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      padding: 12px 20px;
+      font-size: 11px;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .apply-option:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .apply-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Footer mantra */
+    .footer-mantra {
+      margin-top: 60px;
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .mantra {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(24px, 5vw, 42px);
+      font-weight: 800;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+
+    .mantra span {
+      position: relative;
+    }
+
+    .mantra span:nth-child(1) { color: var(--accent-green); }
+    .mantra span:nth-child(2) { color: var(--accent-orange); }
+    .mantra span:nth-child(3) { color: var(--accent-cyan); }
+    .mantra span:nth-child(4) { color: var(--text-primary); }
+
+    .mantra span::after {
+      content: '.';
+    }
+
+    .mantra span:last-child::after {
+      content: '';
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      background: var(--accent-green);
+      margin-left: 8px;
+      animation: cursor-blink 1s step-end infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Decorative elements */
+    .corner-decoration {
+      position: fixed;
+      font-size: 10px;
+      color: var(--text-muted);
+      opacity: 0.3;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .corner-decoration.top-right {
+      top: 20px;
+      right: 20px;
+    }
+
+    .corner-decoration.bottom-left {
+      bottom: 20px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  
+  <div class="corner-decoration top-right">v1.0.0</div>
+  <div class="corner-decoration bottom-left">// build something</div>
+
+  <div class="poster">
+    <!-- Header -->
+    <header class="header">
+      <div class="code-decoration">
+        <div class="comment">// not your typical internship</div>
+        <div>const mindset = "curious";</div>
+        <div>while(learning) { grow(); }</div>
+      </div>
+
+      <div class="role-badge">Now Recruiting</div>
+      
+      <h1 class="main-title">
+        <span class="line1">SOFTWARE</span>
+        <span class="line2">INTERN</span>
+      </h1>
+      
+      <p class="tagline">Not your typical internship. <span>On purpose.</span></p>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Hero statement -->
+      <section class="hero-statement">
+        <p>
+          We're not looking for the <span class="strike">"perfect resume"</span><br>
+          We're looking for <span class="highlight">builders</span>, <span class="highlight">explorers</span>, and people who can't stop asking <span class="highlight">"what if?"</span>
+        </p>
+      </section>
+
+      <!-- What we believe -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <h2 class="section-title">Great Developers Are Made By</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="beliefs-grid">
+          <div class="belief-item"><span>Curiosity</span></div>
+          <div class="belief-item"><span>Self-learning</span></div>
+          <div class="belief-item"><span>Real problem solving</span></div>
+          <div class="belief-item"><span>Courage to try before knowing everything</span></div>
+        </div>
+      </section>
+
+      <!-- What you'll do -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <h2 class="section-title">What You'll Actually Do</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="tasks-list">
+          <div class="task-item">
+            <span class="task-icon">→</span>
+            <span class="task-text">Work on real production-level problems, not tutorials</span>
+          </div>
+          <div class="task-item">
+            <span class="task-icon">→</span>
+            <span class="task-text">Learn the full flow: idea → architecture → implementation → iteration</span>
+          </div>
+          <div class="task-item">
+            <span class="task-icon">→</span>
+            <span class="task-text">Break things (safely), fix them, and explain why</span>
+          </div>
+          <div class="task-item">
+            <span class="task-icon">→</span>
+            <span class="task-text">Think like an engineer, not a tutorial-following machine</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Don't care / Do care -->
+      <section class="section">
+        <div class="split-section">
+          <div class="split-card dont-care">
+            <h3 class="split-title">
+              <span>We Don't Care About</span>
+            </h3>
+            <ul class="split-list">
+              <li>College degree</li>
+              <li>GPA</li>
+              <li>Job titles</li>
+              <li>Fancy certifications</li>
+              <li>Previous internships</li>
+            </ul>
+          </div>
+          <div class="split-card do-care">
+            <h3 class="split-title">
+              <span>What Matters</span>
+            </h3>
+            <ul class="split-list">
+              <li>End-to-end understanding</li>
+              <li>Problem reasoning ability</li>
+              <li>Ownership of learning</li>
+              <li>Open to feedback</li>
+              <li>Care about quality</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Apply -->
+      <section class="apply-section">
+        <h2 class="apply-title">Skip the Resume</h2>
+        <div class="apply-options">
+          <div class="apply-option">GitHub Profile</div>
+          <div class="apply-option">A Project You Built</div>
+          <div class="apply-option">A Problem You Solved</div>
+          <div class="apply-option">What You're Learning</div>
+        </div>
+        <p class="apply-note">If you're excited to learn, experiment, and grow — you already belong here.</p>
+      </section>
+
+      <!-- Footer mantra -->
+      <footer class="footer-mantra">
+        <div class="mantra">
+          <span>Build</span>
+          <span>Break</span>
+          <span>Learn</span>
+          <span>Repeat</span>
+          <span class="cursor-blink"></span>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
