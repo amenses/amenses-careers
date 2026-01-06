@@ -3,67 +3,1838 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Software Engineer Associate | Amenses Innovation Pvt. Ltd.</title>
-    <meta name="description" content="Join Amenses Innovation as a Software Engineer Associate in Indore. Build scalable solutions, work on real-world projects, and grow your skills alongside experienced developers. Full-time position available immediately." />
-    <meta name="keywords" content="software engineer job, software engineer associate, tech jobs Indore, software development career, Amenses Innovation, full-time software engineer, engineering jobs" />
-    <meta name="author" content="Amenses Innovation Pvt. Ltd." />
-    <link rel="canonical" href="https://career.amenses.com/software-engineer-associate/" />
+    <title>Software Engineer – L1 | Amenses Innovation Pvt. Ltd.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --orange: #f57c00;
+        --orange-light: #ff9d3d;
+        --orange-glow: rgba(245, 124, 0, 0.3);
+        --navy: #121820;
+        --navy-light: #1a2332;
+        --navy-lighter: #242f42;
+        --cream: #faf8f5;
+        --cream-dark: #e8e4dd;
+        --text-dark: #0d1117;
+        --text-muted: #5a6272;
+      }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://career.amenses.com/software-engineer-associate/" />
-    <meta property="og:title" content="Software Engineer Associate | Amenses Innovation Pvt. Ltd." />
-    <meta property="og:description" content="Join Amenses Innovation as a Software Engineer Associate in Indore. Build scalable solutions and grow your skills alongside experienced developers." />
-    <meta property="og:image" content="https://career.amenses.com/assets/amenses-logo.png" />
-    <meta property="og:site_name" content="Amenses Innovation Careers" />
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://career.amenses.com/software-engineer-associate/" />
-    <meta name="twitter:title" content="Software Engineer Associate | Amenses Innovation Pvt. Ltd." />
-    <meta name="twitter:description" content="Join Amenses Innovation as a Software Engineer Associate in Indore. Build scalable solutions and grow your skills alongside experienced developers." />
-    <meta name="twitter:image" content="https://career.amenses.com/assets/amenses-logo.png" />
+      html {
+        scroll-behavior: smooth;
+      }
 
-    <!-- Structured Data for Job Posting -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "JobPosting",
-      "title": "Software Engineer Associate",
-      "description": "Join our engineering team to build scalable solutions, work on real-world projects, and grow your skills alongside experienced developers. Full-time position in Indore, MP.",
-      "identifier": {
-        "@type": "PropertyValue",
-        "name": "Amenses Innovation",
-        "value": "SE-ASSOC-001"
-      },
-      "datePosted": "2025-01-27",
-      "employmentType": "FULL_TIME",
-      "hiringOrganization": {
-        "@type": "Organization",
-        "name": "Amenses Innovation Pvt. Ltd.",
-        "sameAs": "https://amenses.com",
-        "logo": "https://career.amenses.com/assets/amenses-logo.png"
-      },
-      "jobLocation": {
-        "@type": "Place",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Indore",
-          "addressRegion": "Madhya Pradesh",
-          "addressCountry": "IN"
+      body {
+        background: var(--cream);
+        color: var(--navy);
+        font-family: "Space Grotesk", sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        background: var(--navy);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 60px;
+        overflow: hidden;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 100px 24px 60px;
+          min-height: auto;
         }
-      },
-      "baseSalary": {
-        "@type": "MonetaryAmount",
-        "currency": "INR"
-      },
-      "workHours": "Full-time",
-      "jobLocationType": "On-site"
-    }
-    </script>
+      }
+
+      /* Geometric background */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -20%;
+        right: -10%;
+        width: 60%;
+        height: 140%;
+        background: linear-gradient(
+          135deg,
+          var(--orange) 0%,
+          var(--orange-light) 100%
+        );
+        clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+        opacity: 0.08;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--orange),
+          transparent
+        );
+      }
+
+      /* Grid overlay */
+      .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            rgba(245, 124, 0, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(245, 124, 0, 0.03) 1px, transparent 1px);
+        background-size: 80px 80px;
+        pointer-events: none;
+      }
+
+      /* Floating orbs */
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          var(--orange-glow) 0%,
+          transparent 70%
+        );
+        filter: blur(60px);
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .orb-1 {
+        width: 400px;
+        height: 400px;
+        top: 10%;
+        right: 15%;
+        animation-delay: 0s;
+      }
+      .orb-2 {
+        width: 300px;
+        height: 300px;
+        bottom: 20%;
+        left: 10%;
+        animation-delay: 4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(20px, -30px) scale(1.1);
+        }
+      }
+
+      /* Company header */
+      .company-header {
+        position: absolute;
+        top: 40px;
+        left: 60px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        z-index: 10;
+      }
+
+      @media (max-width: 768px) {
+        .company-header {
+          left: 24px;
+          top: 24px;
+        }
+        .company-header {
+          gap: 12px;
+        }
+      }
+
+      .company-name {
+        font-family: "Outfit", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--cream);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .company-name:hover {
+        color: var(--orange);
+      }
+
+      .top-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .jd-button {
+        border: 1px solid var(--orange);
+        background: transparent;
+        color: var(--cream);
+        padding: 8px 18px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .jd-button span {
+        font-size: 14px;
+      }
+
+      .jd-button:hover {
+        background: var(--orange);
+        color: var(--navy);
+        box-shadow: 0 8px 20px var(--orange-glow);
+      }
+
+      .location-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--orange);
+        color: var(--navy);
+        padding: 8px 16px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .location-badge::before {
+        content: "📍";
+        font-size: 12px;
+      }
+
+      /* Hero layout */
+      .hero-layout {
+        position: relative;
+        z-index: 5;
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 60px;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 1024px) {
+        .hero-layout {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+      }
+
+      .hero-content {
+        max-width: 700px;
+      }
+
+      /* Hero Logo Section */
+      .hero-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      @media (max-width: 1024px) {
+        .hero-logo {
+          order: -1;
+          margin-bottom: 20px;
+        }
+      }
+
+      .logo-container {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+
+      .logo-image {
+        width: 220px;
+        height: auto;
+        position: relative;
+        z-index: 2;
+        filter: drop-shadow(0 0 30px rgba(245, 124, 0, 0.3));
+        animation: logoFloat 6s ease-in-out infinite;
+      }
+
+      @keyframes logoFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .logo-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          var(--orange-glow) 0%,
+          transparent 70%
+        );
+        filter: blur(40px);
+        z-index: 1;
+        animation: glowPulse 4s ease-in-out infinite;
+      }
+
+      @keyframes glowPulse {
+        0%,
+        100% {
+          opacity: 0.5;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: translate(-50%, -50%) scale(1.2);
+        }
+      }
+
+      .logo-tagline {
+        font-family: "Outfit", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--cream);
+        opacity: 0.7;
+        line-height: 1.6;
+        letter-spacing: 0.5px;
+      }
+
+      /* Eyebrow */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .eyebrow-line {
+        width: 60px;
+        height: 2px;
+        background: var(--orange);
+      }
+
+      .eyebrow-text {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      /* Hero title */
+      .hero-title {
+        font-family: "Outfit", sans-serif;
+        font-weight: 900;
+        line-height: 0.9;
+        margin-bottom: 30px;
+      }
+
+      .hero-title .line-1 {
+        display: block;
+        font-size: clamp(60px, 12vw, 140px);
+        color: var(--cream);
+        letter-spacing: -4px;
+      }
+
+      .hero-title .line-2 {
+        display: block;
+        font-size: clamp(60px, 12vw, 140px);
+        color: transparent;
+        -webkit-text-stroke: 2px var(--orange);
+        letter-spacing: -4px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+        color: var(--cream);
+        opacity: 0.7;
+        max-width: 500px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .hero-subtitle strong {
+        color: var(--orange);
+        opacity: 1;
+      }
+
+      /* Hero Statement */
+      .hero-statement {
+        background: rgba(255, 255, 255, 0.03);
+        border-left: 3px solid var(--orange);
+        padding: 24px 28px;
+        margin-bottom: 40px;
+        max-width: 100%;
+        backdrop-filter: blur(10px);
+      }
+
+      .statement-text {
+        font-size: clamp(16px, 2vw, 20px);
+        color: var(--cream);
+        line-height: 1.7;
+        font-weight: 400;
+      }
+
+      .statement-text .strike {
+        color: var(--cream);
+        opacity: 0.4;
+        text-decoration: line-through;
+        text-decoration-color: var(--orange);
+        text-decoration-thickness: 2px;
+      }
+
+      .statement-text .highlight {
+        color: var(--orange);
+        font-weight: 600;
+      }
+
+      /* Role badges */
+      .role-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .role-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--navy-light);
+        border: 1px solid var(--navy-lighter);
+        padding: 10px 16px;
+        font-size: 12px;
+        color: var(--cream);
+        font-weight: 500;
+      }
+
+      .role-badge.primary {
+        background: rgba(245, 124, 0, 0.15);
+        border-color: var(--orange);
+        color: var(--orange);
+      }
+
+      .role-badge svg {
+        width: 14px;
+        height: 14px;
+        opacity: 0.7;
+      }
+
+      /* Developer Qualities */
+      .dev-qualities {
+        background: var(--navy-light);
+        border: 1px solid var(--navy-lighter);
+        padding: 28px 32px;
+        max-width: 100%;
+      }
+
+      .dev-qualities-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+
+      .dev-number {
+        font-family: "Outfit", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--orange);
+        background: rgba(245, 124, 0, 0.1);
+        padding: 5px 10px;
+        letter-spacing: 1px;
+      }
+
+      .dev-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--cream);
+        letter-spacing: -0.3px;
+      }
+
+      .dev-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .dev-tag {
+        background: transparent;
+        border: 1px solid var(--orange);
+        color: var(--cream);
+        padding: 10px 16px;
+        font-size: 12px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: default;
+      }
+
+      .dev-tag:hover {
+        background: var(--orange);
+        color: var(--navy);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px var(--orange-glow);
+      }
+
+      @media (max-width: 768px) {
+        .dev-qualities {
+          padding: 20px;
+        }
+
+        .dev-tags {
+          gap: 8px;
+        }
+
+        .dev-tag {
+          padding: 8px 14px;
+          font-size: 11px;
+        }
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 40px;
+        left: 60px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--cream);
+        opacity: 0.5;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .scroll-indicator::before {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background: var(--orange);
+        animation: scrollPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scaleY(0.5);
+          opacity: 0.5;
+        }
+      }
+
+      /* Content sections */
+      .content {
+        background: var(--cream);
+        padding: 100px 60px;
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          padding: 60px 24px;
+        }
+      }
+
+      .content-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      /* Section styling */
+      .section {
+        margin-bottom: 100px;
+      }
+
+      .section:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+      }
+
+      .section-label::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--orange);
+      }
+
+      .section-title {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(32px, 5vw, 52px);
+        font-weight: 800;
+        color: var(--navy);
+        line-height: 1.1;
+        margin-bottom: 40px;
+        letter-spacing: -1px;
+      }
+
+      /* Tech Stack Grid */
+      .tech-stack-section {
+        overflow: hidden;
+      }
+
+      .tech-stack-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      @media (max-width: 768px) {
+        .tech-stack-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .tech-stack-card {
+        background: white;
+        border: 1px solid var(--cream-dark);
+        padding: 36px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+
+      .tech-stack-card:hover {
+        border-color: var(--orange);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .tech-stack-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--orange);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.4s ease;
+      }
+
+      .tech-stack-card:hover::before {
+        transform: scaleY(1);
+      }
+
+      .tech-stack-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+
+      .tech-stack-icon {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(245, 124, 0, 0.1);
+        color: var(--orange);
+        font-size: 20px;
+      }
+
+      .tech-stack-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--navy);
+      }
+
+      .tech-stack-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tech-stack-tag {
+        background: var(--cream);
+        border: 1px solid var(--cream-dark);
+        color: var(--navy);
+        padding: 8px 14px;
+        font-size: 12px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .tech-stack-tag:hover {
+        background: var(--navy);
+        color: var(--cream);
+        border-color: var(--navy);
+      }
+
+      /* Mindset Grid */
+      .mindset-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      @media (max-width: 900px) {
+        .mindset-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .mindset-card {
+        background: var(--navy);
+        padding: 40px 32px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.4s ease;
+      }
+
+      .mindset-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .mindset-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--orange);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .mindset-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .mindset-icon {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .mindset-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--cream);
+        margin-bottom: 12px;
+      }
+
+      .mindset-text {
+        font-size: 14px;
+        color: var(--cream);
+        opacity: 0.6;
+        line-height: 1.7;
+      }
+
+      /* Culture Section */
+      .culture-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      @media (max-width: 900px) {
+        .culture-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 500px) {
+        .culture-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .culture-item {
+        background: white;
+        border: 1px solid var(--cream-dark);
+        padding: 28px 24px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .culture-item:hover {
+        border-color: var(--orange);
+        transform: translateY(-4px);
+      }
+
+      .culture-icon {
+        font-size: 28px;
+        margin-bottom: 14px;
+      }
+
+      .culture-text {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--navy);
+        line-height: 1.5;
+      }
+
+      /* Comparison section */
+      .comparison {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        border: 1px solid var(--cream-dark);
+        overflow: hidden;
+      }
+
+      @media (max-width: 768px) {
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .comparison-side {
+        padding: 50px 40px;
+      }
+
+      .comparison-side.dont {
+        background: var(--cream-dark);
+      }
+
+      .comparison-side.do {
+        background: var(--navy);
+      }
+
+      .comparison-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .comparison-side.dont .comparison-title {
+        color: var(--text-muted);
+      }
+
+      .comparison-side.do .comparison-title {
+        color: var(--orange);
+      }
+
+      .comparison-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .comparison-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .comparison-side.dont .comparison-list li {
+        color: var(--text-muted);
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+
+      .comparison-side.do .comparison-list li {
+        color: var(--cream);
+      }
+
+      .comparison-list li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        flex-shrink: 0;
+      }
+
+      .comparison-side.dont .comparison-list li::before {
+        background: var(--text-muted);
+        opacity: 0.3;
+      }
+
+      .comparison-side.do .comparison-list li::before {
+        background: var(--orange);
+      }
+
+      /* Compensation Section */
+      .compensation-card {
+        background: white;
+        border: 1px solid var(--cream-dark);
+        padding: 50px 50px;
+        position: relative;
+        transition: all 0.4s ease;
+        box-shadow: 0 2px 20px rgba(18, 24, 32, 0.05);
+      }
+
+      .compensation-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 40px rgba(18, 24, 32, 0.1);
+        border-color: var(--orange);
+      }
+
+      .compensation-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--orange);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .compensation-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .compensation-content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .compensation-text {
+        font-size: 16px;
+        color: var(--navy);
+        line-height: 1.8;
+      }
+
+      .compensation-text strong {
+        color: var(--orange);
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .compensation-card {
+          padding: 40px 32px;
+        }
+
+        .compensation-text {
+          font-size: 15px;
+        }
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--navy);
+        padding: 100px 60px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      @media (max-width: 768px) {
+        .cta-section {
+          padding: 60px 24px;
+        }
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          ellipse at 30% 50%,
+          var(--orange-glow) 0%,
+          transparent 50%
+        );
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .cta-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 5;
+      }
+
+      .cta-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .cta-title {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(36px, 6vw, 64px);
+        font-weight: 900;
+        color: var(--cream);
+        line-height: 1;
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+      }
+
+      .cta-title span {
+        color: var(--orange);
+      }
+
+      .cta-subtitle {
+        font-size: 16px;
+        color: var(--cream);
+        opacity: 0.6;
+      }
+
+      /* CTA Cards */
+      .cta-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      @media (max-width: 900px) {
+        .cta-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .cta-card {
+        position: relative;
+        background: var(--navy-light);
+        border: 1px solid var(--navy-lighter);
+        padding: 0;
+        text-decoration: none;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        cursor: pointer;
+        display: block;
+      }
+
+      .cta-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--orange) 0%,
+          var(--orange-light) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .cta-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--orange);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .cta-card:hover {
+        border-color: var(--orange);
+        transform: translateY(-12px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 50px var(--orange-glow);
+      }
+
+      .cta-card:hover::before {
+        opacity: 0.08;
+      }
+
+      .cta-card:hover::after {
+        transform: scaleX(1);
+      }
+
+      .cta-card:hover .cta-card-icon {
+        transform: scale(1.15) rotate(-5deg);
+        background: var(--orange);
+        color: var(--navy);
+        border-color: var(--orange);
+      }
+
+      .cta-card:hover .cta-card-arrow {
+        transform: translate(8px, -8px);
+        opacity: 1;
+      }
+
+      .cta-card-inner {
+        position: relative;
+        z-index: 1;
+        padding: 36px 32px;
+      }
+
+      .cta-card-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .cta-card-icon {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        background: var(--navy-lighter);
+        border: 1px solid rgba(245, 124, 0, 0.2);
+        color: var(--orange);
+        transition: all 0.4s ease;
+      }
+
+      .cta-card-arrow {
+        color: var(--orange);
+        font-size: 20px;
+        opacity: 0.4;
+        transition: all 0.4s ease;
+      }
+
+      .cta-card-content {
+        position: relative;
+      }
+
+      .cta-card-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--cream);
+        margin-bottom: 8px;
+      }
+
+      .cta-card-desc {
+        font-size: 13px;
+        color: var(--cream);
+        opacity: 0.5;
+        line-height: 1.6;
+      }
+
+      /* Footer */
+      .footer {
+        width: 100%;
+        padding: 60px;
+        position: relative;
+        z-index: 1;
+        border-top: 1px solid var(--navy-lighter);
+        background: var(--navy);
+        color: var(--cream);
+      }
+
+      @media (max-width: 768px) {
+        .footer {
+          padding: 40px 24px;
+        }
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 60px;
+        align-items: start;
+      }
+
+      @media (max-width: 900px) {
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+        }
+      }
+
+      .footer-brand {
+        max-width: 300px;
+      }
+
+      @media (max-width: 900px) {
+        .footer-brand {
+          max-width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .footer-logo {
+        height: 36px;
+        margin-bottom: 16px;
+      }
+
+      .footer-tagline {
+        font-size: 14px;
+        color: var(--cream);
+        opacity: 0.5;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 12px;
+      }
+
+      @media (max-width: 900px) {
+        .footer-social {
+          justify-content: center;
+        }
+      }
+
+      .social-link {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--navy-lighter);
+        border: 1px solid var(--navy-lighter);
+        color: var(--cream);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--orange);
+        border-color: var(--orange);
+        color: var(--navy);
+      }
+
+      .social-link svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .footer-column h4 {
+        font-family: "Outfit", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-links a {
+        font-size: 14px;
+        color: var(--cream);
+        opacity: 0.6;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        opacity: 1;
+        color: var(--orange);
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 30px;
+        border-top: 1px solid var(--navy-lighter);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      .footer-copyright {
+        font-size: 13px;
+        color: var(--cream);
+        opacity: 0.4;
+      }
+
+      .footer-legal {
+        display: flex;
+        gap: 24px;
+      }
+
+      .footer-legal a {
+        font-size: 13px;
+        color: var(--cream);
+        opacity: 0.4;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer-legal a:hover {
+        opacity: 1;
+        color: var(--orange);
+      }
+
+      /* Mantra */
+      .mantra-section {
+        text-align: center;
+        padding: 60px 0 0;
+      }
+
+      .mantra {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(20px, 4vw, 32px);
+        font-weight: 700;
+        color: var(--cream);
+        opacity: 0.6;
+        margin-bottom: 30px;
+      }
+
+      .mantra span {
+        color: var(--orange);
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
-    <h1>Software Engineer Associate</h1>
-    <p>This page is under construction. Please visit our <a href="/">careers page</a> for more information.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+
+      <div class="company-header">
+        <div class="top-actions">
+          <a href="../index.html" class="company-name">Amenses Innovation</a>
+          <a
+            href="../assets/software-engineer-jd.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="jd-button"
+          >
+            <span>⬇</span> Download JD
+          </a>
+        </div>
+        <div class="location-badge">In-Office · Indore</div>
+      </div>
+
+      <div class="hero-layout">
+        <!-- Left Content -->
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text">Full-Time · 2 Openings</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="line-1">SOFTWARE</span>
+            <span class="line-2">ENGINEER</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Level 1 · <strong>Not about "experience years"</strong> — it's about
+            how you think when no one is watching.
+          </p>
+
+          <div class="hero-statement">
+            <p class="statement-text">
+              We're not looking for the
+              <span class="strike">"perfect resume"</span><br />
+              We're looking for <span class="highlight">system thinkers</span>,
+              <span class="highlight">problem solvers</span>, and engineers who
+              pause before hitting commit to ask
+              <span class="highlight">"Is this the best way?"</span>
+            </p>
+          </div>
+
+          <!-- Role badges -->
+          <div class="role-badges">
+            <div class="role-badge primary">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+              Full-Time
+            </div>
+            <div class="role-badge">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              2 Positions
+            </div>
+            <div class="role-badge">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Indore, MP
+            </div>
+          </div>
+
+          <!-- What we value -->
+          <div class="dev-qualities">
+            <div class="dev-qualities-header">
+              <span class="dev-number">01</span>
+              <h3 class="dev-title">The Engineer We're Looking For</h3>
+            </div>
+            <div class="dev-tags">
+              <span class="dev-tag">System Thinker</span>
+              <span class="dev-tag">Questions Everything</span>
+              <span class="dev-tag">Refactors Proactively</span>
+              <span class="dev-tag">Owns End-to-End</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Logo -->
+        <div class="hero-logo">
+          <div class="logo-container">
+            <img
+              src="../assets/amenses-logo.png"
+              alt="Amenses Innovation Logo"
+              class="logo-image"
+            />
+            <div class="logo-glow"></div>
+          </div>
+          <p class="logo-tagline">
+            Build systems. Question everything.<br />Grow with intent.
+          </p>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">Scroll to explore</div>
+    </section>
+
+    <!-- Content -->
+    <section class="content">
+      <div class="content-wrapper">
+        <!-- Tech Stack -->
+        <div class="section tech-stack-section">
+          <span class="section-label">Tech Stack</span>
+          <h2 class="section-title">
+            You've actually built things,<br />not just followed tutorials
+          </h2>
+
+          <div class="tech-stack-grid">
+            <div class="tech-stack-card">
+              <div class="tech-stack-header">
+                <div class="tech-stack-icon">🎨</div>
+                <h3 class="tech-stack-title">Frontend</h3>
+              </div>
+              <div class="tech-stack-tags">
+                <span class="tech-stack-tag">React</span>
+                <span class="tech-stack-tag">Next.js</span>
+                <span class="tech-stack-tag">Vue.js</span>
+                <span class="tech-stack-tag">Angular</span>
+                <span class="tech-stack-tag">Tailwind CSS</span>
+                <span class="tech-stack-tag">MUI</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-card">
+              <div class="tech-stack-header">
+                <div class="tech-stack-icon">⚙️</div>
+                <h3 class="tech-stack-title">Backend</h3>
+              </div>
+              <div class="tech-stack-tags">
+                <span class="tech-stack-tag">Node.js</span>
+                <span class="tech-stack-tag">Express</span>
+                <span class="tech-stack-tag">Fastify</span>
+                <span class="tech-stack-tag">NestJS</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-card">
+              <div class="tech-stack-header">
+                <div class="tech-stack-icon">📝</div>
+                <h3 class="tech-stack-title">Languages</h3>
+              </div>
+              <div class="tech-stack-tags">
+                <span class="tech-stack-tag">JavaScript</span>
+                <span class="tech-stack-tag">TypeScript</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-card">
+              <div class="tech-stack-header">
+                <div class="tech-stack-icon">🧠</div>
+                <h3 class="tech-stack-title">Learning Tools</h3>
+              </div>
+              <div class="tech-stack-tags">
+                <span class="tech-stack-tag">Documentation</span>
+                <span class="tech-stack-tag">ChatGPT</span>
+                <span class="tech-stack-tag">Claude</span>
+                <span class="tech-stack-tag">Cursor</span>
+              </div>
+            </div>
+          </div>
+
+          <p
+            style="
+              text-align: center;
+              margin-top: 40px;
+              font-size: 14px;
+              color: var(--text-muted);
+              font-style: italic;
+            "
+          >
+            "I chose this stack because it solved this problem better." — That's
+            the clarity we expect.
+          </p>
+        </div>
+
+        <!-- Mindset -->
+        <div class="section">
+          <span class="section-label">The Mindset</span>
+          <h2 class="section-title">
+            This matters more than<br />any framework list
+          </h2>
+
+          <div class="mindset-grid">
+            <div class="mindset-card">
+              <div class="mindset-icon">🔍</div>
+              <h3 class="mindset-title">Question First</h3>
+              <p class="mindset-text">
+                You question your own solutions before someone else does.
+                "Should I research more? Can this be simpler?"
+              </p>
+            </div>
+            <div class="mindset-card">
+              <div class="mindset-icon">🔄</div>
+              <h3 class="mindset-title">Refactor Proactively</h3>
+              <p class="mindset-text">
+                Not defensively. You improve code because you want to, not
+                because you're forced to.
+              </p>
+            </div>
+            <div class="mindset-card">
+              <div class="mindset-icon">🏗️</div>
+              <h3 class="mindset-title">Think in Systems</h3>
+              <p class="mindset-text">
+                Not just tasks or tickets. You see the bigger picture and build
+                complete solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- What matters / doesn't matter -->
+        <div class="section">
+          <div class="comparison">
+            <div class="comparison-side dont">
+              <h3 class="comparison-title">
+                <span>×</span> What Doesn't Matter
+              </h3>
+              <ul class="comparison-list">
+                <li>College degree</li>
+                <li>Company brand names</li>
+                <li>Certifications</li>
+                <li>Years on resume</li>
+              </ul>
+            </div>
+            <div class="comparison-side do">
+              <h3 class="comparison-title">
+                <span>✓</span> What Actually Matters
+              </h3>
+              <ul class="comparison-list">
+                <li>Your GitHub portfolio</li>
+                <li>Depth of skill in your claimed tech</li>
+                <li>Critical thinking in unfamiliar scenarios</li>
+                <li>Architectural thinking for systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Culture -->
+        <div class="section">
+          <span class="section-label">Culture & Environment</span>
+          <h2 class="section-title">What we promise</h2>
+
+          <div class="culture-grid">
+            <div class="culture-item">
+              <div class="culture-icon">🤝</div>
+              <p class="culture-text">Non-toxic, respectful environment</p>
+            </div>
+            <div class="culture-item">
+              <div class="culture-icon">🚀</div>
+              <p class="culture-text">Continuous hackathon culture</p>
+            </div>
+            <div class="culture-item">
+              <div class="culture-icon">📅</div>
+              <p class="culture-text">5-day work week</p>
+            </div>
+            <div class="culture-item">
+              <div class="culture-icon">📈</div>
+              <p class="culture-text">Daily challenges that grow you</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compensation -->
+        <div class="section">
+          <span class="section-label">Compensation</span>
+          <h2 class="section-title">How we value<br />your contribution</h2>
+
+          <div class="compensation-card">
+            <div class="compensation-content">
+              <p class="compensation-text">
+                Compensation will be aligned with your
+                <strong>skillset</strong>,
+                <strong>problem-solving ability</strong>, and
+                <strong>ownership level</strong>.
+              </p>
+              <p class="compensation-text">
+                We may not be the highest-paying company today—but we are
+                <strong
+                  >intentional about recognizing real value and growth</strong
+                >.
+              </p>
+              <p class="compensation-text">
+                If you bring <strong>strong fundamentals and impact</strong>, we
+                will make sure the compensation reflects that.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-wrapper">
+        <div class="cta-header">
+          <h2 class="cta-title">Skip the <span>Polish</span></h2>
+          <p class="cta-subtitle">
+            Share what actually represents you. Click to apply.
+          </p>
+        </div>
+
+        <div class="cta-grid">
+          <a
+            href="mailto:hr@amenses.com?subject=Software%20Engineer%20L1%20Application%20—%20My%20GitHub%20Profile&body=Hi%20Amenses%20Innovation%20Team%2C%0A%0AI'm%20applying%20for%20the%20Software%20Engineer%20L1%20position%20in%20Indore.%0A%0AHere's%20my%20GitHub%20profile%3A%20%5BPaste%20your%20GitHub%20URL%5D%0A%0AProjects%20I'm%20proud%20of%3A%0A•%20%5BRepo%20name%5D%20—%20%5BWhat%20it%20does%20%26%20why%20I%20chose%20this%20stack%5D%0A•%20%5BRepo%20name%5D%20—%20%5BWhat%20it%20does%20%26%20key%20architectural%20decisions%5D%0A%0AMy%20strongest%20areas%3A%0A%5BFrontend%2FBackend%2FFull-stack%20%2B%20specific%20technologies%5D%0A%0ALooking%20forward%20to%20discussing!%0A%0A%5BYour%20Name%5D"
+            class="cta-card"
+          >
+            <div class="cta-card-inner">
+              <div class="cta-card-header">
+                <div class="cta-card-icon">⌘</div>
+                <span class="cta-card-arrow">↗</span>
+              </div>
+              <div class="cta-card-content">
+                <h3 class="cta-card-title">GitHub Profile</h3>
+                <p class="cta-card-desc">
+                  Show us your code, architecture decisions, and contributions
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="mailto:hr@amenses.com?subject=Software%20Engineer%20L1%20Application%20—%20Project%20Showcase&body=Hi%20Amenses%20Innovation%20Team%2C%0A%0AI'm%20applying%20for%20the%20Software%20Engineer%20L1%20role.%0A%0A🚀%20Project%20Name%3A%20%5BYour%20project%5D%0A🔗%20Link%3A%20%5BLive%20URL%20or%20repo%5D%0A🛠️%20Tech%20Stack%3A%20%5Be.g.%20React%2C%20Node.js%2C%20PostgreSQL%5D%0A%0AWhy%20I%20chose%20this%20stack%3A%0A%5BExplain%20your%20technical%20decisions%5D%0A%0AArchitectural%20highlights%3A%0A%5BKey%20design%20patterns%2C%20system%20design%20choices%5D%0A%0AChallenges%20%26%20how%20I%20solved%20them%3A%0A%5BReal%20problems%20you%20faced%5D%0A%0A%5BYour%20Name%5D"
+            class="cta-card"
+          >
+            <div class="cta-card-inner">
+              <div class="cta-card-header">
+                <div class="cta-card-icon">◈</div>
+                <span class="cta-card-arrow">↗</span>
+              </div>
+              <div class="cta-card-content">
+                <h3 class="cta-card-title">A Project You Built</h3>
+                <p class="cta-card-desc">
+                  Even unfinished — show us your thinking
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="mailto:hr@amenses.com?subject=Software%20Engineer%20L1%20Application%20—%20Problem%20I%20Solved&body=Hi%20Amenses%20Innovation%20Team%2C%0A%0AI'm%20applying%20for%20the%20Software%20Engineer%20L1%20role.%20Here's%20a%20technical%20problem%20I%20worked%20through%3A%0A%0A🔴%20The%20Problem%3A%0A%5BWhat%20were%20you%20trying%20to%20build%20or%20solve%3F%5D%0A%0A🟡%20Initial%20Approach%20%26%20Why%20It%20Failed%3A%0A%5BWhat%20didn't%20work%20and%20why%5D%0A%0A🟢%20My%20Debugging%20%26%20Research%20Process%3A%0A%5BHow%20you%20investigated%20the%20issue%5D%0A%0A✅%20The%20Solution%20%26%20Why%20It%20Worked%3A%0A%5BTechnical%20details%20of%20what%20fixed%20it%5D%0A%0A💭%20What%20I'd%20Do%20Differently%20Now%3A%0A%5BReflection%20on%20the%20experience%5D%0A%0A%5BYour%20Name%5D"
+            class="cta-card"
+          >
+            <div class="cta-card-inner">
+              <div class="cta-card-header">
+                <div class="cta-card-icon">⚡</div>
+                <span class="cta-card-arrow">↗</span>
+              </div>
+              <div class="cta-card-content">
+                <h3 class="cta-card-title">A Problem You Solved</h3>
+                <p class="cta-card-desc">
+                  Tell us about a challenge and your approach
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="mantra-section">
+          <p class="mantra">
+            If reading this made you <span>nod instead of scroll</span> — we'd
+            love to talk.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img
+            src="../assets/amenses-logo.png"
+            alt="Amenses Innovation"
+            class="footer-logo"
+          />
+          <p class="footer-tagline">
+            We build. We learn. We grow — together. Join us in creating
+            innovative solutions that make a difference.
+          </p>
+          <div class="footer-social">
+            <a
+              href="https://www.linkedin.com/company/amenses-innovation-pvt-ltd/"
+              class="social-link"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://twitter.com/amenses_i"
+              class="social-link"
+              target="_blank"
+              aria-label="Twitter"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/amensesinnovation/"
+              class="social-link"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="https://amenses.com">Home</a></li>
+            <li><a href="https://amenses.com/about">About Us</a></li>
+            <li><a href="https://amenses.com/services">Services</a></li>
+            <li><a href="https://amenses.com/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Get in Touch</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:info@amenses.com">info@amenses.com</a></li>
+            <li><a href="mailto:hr@amenses.com">hr@amenses.com</a></li>
+            <li><a href="tel:+919926400955">+91 99 26 40 09 55</a></li>
+            <li>
+              <a href="https://amenses.com" target="_blank">amenses.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © 2025 Amenses Innovation Pvt. Ltd. All rights reserved.
+        </p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
